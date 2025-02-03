@@ -19,10 +19,11 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 public class ProductClientService {
     private static final Logger log = LoggerFactory.getLogger(ProductClientService.class);
     private final ProductService.Client client;
+
     public ProductClientService(){
         try {
-            System.out.println("project service.......");
-            TTransport transport = new TFramedTransport(new TSocket("localhost", 9090));
+            log.info("thrift  client ....");
+            TTransport transport = new TSocket("localhost", 9090);
             transport.open();
             TBinaryProtocol protocol = new TBinaryProtocol(transport);
             client = new ProductService.Client(protocol);

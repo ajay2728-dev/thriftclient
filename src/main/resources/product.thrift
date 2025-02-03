@@ -1,7 +1,7 @@
 namespace java com.example.thriftclient.generated
 
 struct Product {
- 1: i32 id,
+ 1: i32 prodId,
  2: string name,
  3: i32 price
 }
